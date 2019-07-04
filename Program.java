@@ -5,15 +5,11 @@ import java.sql.SQLException;
 public class Program {
 
 	public static void main(String[] args) {
-		/*
-		 * C:\\Users\\win7\\Desktop\\SonjaS\\Dictionary.db
-		 * C:\\Users\\win7\\Desktop\\SonjaS\\knjiga
-		 */
-
 		try {
-			String url = "C:\\Users\\Sonja\\Desktop\\Dictionary.db";
+			//tests the methods created
+			String url = ""; // enter db filepath here
 			Dictionary d = new Dictionary(url);
-			url = "C:\\Users\\Sonja\\Desktop\\knjiga";
+			url = ""; // enter book filepath here
 			Book b = new Book(url, d);
 			b.extract();
 			b.record_additions();
