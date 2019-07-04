@@ -18,9 +18,8 @@ public class Book {
 	}
 
 	public void extract() {
-		// extracts words from the file and counts their appearances
-		// divides them into two separate hashmaps according to presence in the dictionary
-		// records all words in a separate hashmap also
+		// extracts words from the file 
+		// counts the appearances of the words present in the dictionary
 		try (BufferedReader br = new BufferedReader(new FileReader(url))) {
 			String row;
 			while ((row = br.readLine()) != null) {
@@ -47,13 +46,13 @@ public class Book {
 	}
 
 	public String convert(String s) {
-		// converts all non-letter characters to blank spaces
+		// converts all non-letter characters to blank spaces except hyphens and apostrophes
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 			if (c < 'a' || c > 'z') {
 				if (c == '-' && s.charAt(i - 1) != ' ' && s.charAt(i + 1) != ' ') continue;
 				if (c == '\'') continue;
-				else s = s.replace(c, ' '); //TODO dodati uslove za crticu
+				else s = s.replace(c, ' ');
 			}
 		}
 		return s;
