@@ -9,6 +9,8 @@ public class Dictionary {
 	private final String dburl;
 
 	public Dictionary(String url) throws SQLException {
+		// connects to the database while creating dictionary object
+		// it also extracts all distinct words from the database 
 		dburl = "jdbc:sqlite:" + url;
 		con = DriverManager.getConnection(dburl);
 		Statement stm = con.createStatement();
